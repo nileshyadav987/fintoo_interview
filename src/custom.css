@@ -1,5 +1,9 @@
 @import 'bootstrap/dist/css/bootstrap.min.css';
 
+.mos1 .card-title {
+  color: #005263
+}
+
 .myrow {
   height: 100%;
 }
@@ -359,5 +363,32 @@ header.masthead {
   header.masthead h1,
   header.masthead .h1 {
     font-size: 3.5rem;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .mymodal .mybtn-close {
+    margin-left: 0;
+  }
+
+  .mos1 .mycardcon {
+    padding-left: 0;
+  }
+
+  .mymodal .modal-content {
+    border-radius: 0;
+  }
+
+  .modal.mos2 .nearlogin {
+    display: none;
+  }
+
+  .mos2 .mybtn-close {
+    left: 1.5rem;
+  }
+
+  .btn-trans.btn-invert {
+    margin-bottom: 2rem;
+    ;
   }
 }

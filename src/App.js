@@ -92,9 +92,13 @@ function App() {
           <div className={mobileclasses} id="navbarResponsive">
             <ul className="navbar-nav ms-auto my-2 my-lg-0">
               <li className="nav-item"><a className="nav-link" href="#about">About us</a></li>
-              <li className="nav-item"><a className="nav-link" href="#services">Services</a></li>
+              <li className="nav-item" onClick={() => {
+                setMobileMenu("");
+                handleShow();
+              }}><span className="nav-link fk-pointer" >Services</span></li>
               <li className="nav-item"><a className="nav-link" href="#portfolio">Contact us</a></li>
               <li className="nav-item" onClick={() => {
+                setMobileMenu("");
                 handleShow();
               }}><span className="nav-link fk-pointer" >Login</span></li>
             </ul>
@@ -116,7 +120,7 @@ function App() {
               <button className="btn btn-trans btn-invert">Find Out More</button>
               <button className="btn btn-trans">Get in touch</button>
             </div>
-            <div className="col-lg-4 align-self-baseline">
+            <div className="col-lg-4 align-self-baseline d-none d-lg-block">
               <i className="playbtn bi bi-caret-right-fill text-white-75"></i>
             </div>
           </div>
@@ -128,7 +132,7 @@ function App() {
       <Modal show={show} onHide={handleClose} className={`mymodal mos1 ${open2 ? "largefrm" : "smallfrm"}`}>
         <Modal.Body>
           <div className="row m-0 myrow">
-            <div className={`p-4 cnbx ${open2 ? "col-6" : "col-12"}`}>
+            <div className={`p-4 cnbx ${open2 ? "col-md-6 col-12" : "col-12"}`}>
               <button type="button" className="mybtn-close" aria-label="Close" onClick={handleClose}>
                 <i className="bi bi-arrow-left"></i>
               </button>
@@ -137,14 +141,14 @@ function App() {
                 <ServiceCard title="Automated advisory" onClick={() => openLoginForm()} />
               </div>
             </div>
-            {open2 && (<div className="p-4 col-6">
+            {open2 && (<div className="p-4 col-12 col-md-6">
               <div className="loginform">
                 <div>
                   <h3>Welcome back!</h3>
                   <p>Enter your details</p>
                 </div>
                 <div className="loginform-fm">
-                  <input type="text" className="form-control " id="mobile" placeholder="Mobile number" value={mobile} onChange={(v) => setMobile(v.target.value)} maxLength={10} required />
+                  <input type="text" className="form-control text-center" id="mobile" placeholder="Mobile number" value={mobile} onChange={(v) => setMobile(v.target.value)} maxLength={10} required />
                   <div className="txt-note ">
                     We will send an OTP to the provided phone number
                   </div>
@@ -166,7 +170,7 @@ function App() {
       <Modal show={otpFrm} onHide={handleOtpClose} className="mymodal mos2">
         <Modal.Body>
           <div className="row lg-frm myrow m-0">
-            <div className="col-6 p-4">
+            <div className="col-12 col-md-6 p-4">
               <button type="button" className="mybtn-close" aria-label="Close" onClick={handleOtpClose}>
                 <i className="bi bi-arrow-left"></i>
               </button>
@@ -191,7 +195,6 @@ function App() {
               </div>
             </div>
             <div className="col-6 nearlogin p-4">
-
             </div>
           </div>
         </Modal.Body>

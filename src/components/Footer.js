@@ -8,7 +8,7 @@ function Footer() {
       <div className="footer-content">
         <div className="container">
           <div className="row gy-4">
-            <div className="col-lg-3 col-md-12 footer-info">
+            <div className="col-lg-3 col-6 footer-info">
               <a href="index.html" className="logo d-flex align-items-center">
                 <img src={footerlogo} alt="minty" />
               </a>
