@@ -115,12 +115,12 @@ function App() {
               <h1 className="text-white font-weight-bold">Retirement services</h1>
             </div>
 
-            <div className="col-lg-8 align-self-baseline">
+            <div className="col-8 align-self-baseline">
               <p className="text-white-75 mb-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
               <button className="btn btn-trans btn-invert">Find Out More</button>
               <button className="btn btn-trans">Get in touch</button>
             </div>
-            <div className="col-lg-4 align-self-baseline d-none d-lg-block">
+            <div className="col-4 align-self-baseline playbtnbx">
               <i className="playbtn bi bi-caret-right-fill text-white-75"></i>
             </div>
           </div>

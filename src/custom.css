@@ -368,6 +368,10 @@ header.masthead {
 }
 
 @media (max-width: 400px) {
+  .playbtnbx {
+    align-self: end !important;
+  }
+
   .mymodal .mybtn-close {
     margin-left: 0;
   }
