@@ -364,9 +364,10 @@ header.masthead {
   header.masthead .h1 {
     font-size: 3.5rem;
   }
+
 }
 
-@media only screen and (max-width: 600px) {
+@media (max-width: 400px) {
   .mymodal .mybtn-close {
     margin-left: 0;
   }
