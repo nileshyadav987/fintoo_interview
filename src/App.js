@@ -1,5 +1,5 @@
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import './App.css';
 
 import Modal from 'react-bootstrap/Modal'
@@ -14,7 +14,8 @@ import OtpInput from 'react-otp-input';
 
 
 function App() {
-  const timer = { maxtime: (20) };
+  const timer = { maxtime: 20 };
+  const timeoutId = useRef();
   const [sticky, setSticky] = useState("");
   const [show, setShow] = useState(false);
   const [open2, setOpen2] = useState(false);
@@ -53,14 +54,16 @@ function App() {
 
   const startTimer = () => {
     console.log("Im here");
-    timer.obj = setInterval(() => {
+    timeoutId.current = setInterval(() => {
       setTimerStr(new Date(timer.maxtime * 1000).toISOString().substring(14, 19));
       timer.maxtime = timer.maxtime - 1;
       if (timer.maxtime <= 0) {
-        clearInterval(timer.obj);
+        clearInterval(timeoutId.current);
+        timeoutId.current = null;
         setTimerStr("");
       }
     }, 1000);
+
   }
 
   const isSticky = () => {
@@ -73,7 +76,8 @@ function App() {
 
   const changeMobile = () => {
     console.log(858585);
-    clearInterval(timer.obj);
+    clearInterval(timeoutId.current);
+    timeoutId.current = null;
     setOtpFrm(false);
     setShow(true);
   }
