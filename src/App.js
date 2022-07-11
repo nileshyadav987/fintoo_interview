@@ -112,7 +112,7 @@ function App() {
 
           <div className="row gx-4 gx-lg-5 h-100 ">
             <div className="col-lg-8 align-self-end">
-              <h1 className="text-white font-weight-bold">Retirement services</h1>
+              <h2 className="text-white font-weight-bold">Retirement services</h2>
             </div>
 
             <div className="col-8 align-self-baseline">
